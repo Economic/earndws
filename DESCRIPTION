@@ -1,0 +1,21 @@
+Package: earndbc
+Title: Workshop Materials for the EARN Data Bootcamp
+Version: 0.1.0
+Authors@R: person("Jori", "Kandra", email = "jkandra@epi.org", role = c("aut", "cre"))
+Description: Bundles scripts, data, and dependencies for the Economic Analysis
+    and Research Network (EARN) Conference data bootcamp workshops.
+License: MIT + file LICENSE
+Imports:
+    tidyverse,
+    data.table,
+    lubridate,
+    openxlsx2,
+    haven,
+    maps
+Suggests:
+    epiextractr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.5)
