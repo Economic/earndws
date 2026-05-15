@@ -24,7 +24,7 @@ setup_workshop <- function(workshop = c("foraging-for-data", "intro-to-r"), path
   lapply(dirs, dir.create, showWarnings = FALSE, recursive = TRUE)
 
   # copy scripts from inst/extdata/scripts/{workshop}/ into code/
-  scripts_src <- system.file("extdata", "scripts", workshop, package = "earndbc")
+  scripts_src <- system.file("extdata", "scripts", workshop, package = "earndws")
   if (scripts_src == "") stop("Package installed incorrectly: scripts not found.")
   scripts <- list.files(scripts_src, full.names = TRUE)
   file.copy(scripts, file.path(path, "code"), overwrite = TRUE)

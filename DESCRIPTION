@@ -1,4 +1,4 @@
-Package: earndbc
+Package: earndws
 Title: Workshop Materials for the EARN Data Bootcamp
 Version: 0.1.0
 Authors@R: person("Jori", "Kandra", email = "jkandra@epi.org", role = c("aut", "cre"))
