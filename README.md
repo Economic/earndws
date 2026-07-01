@@ -11,11 +11,8 @@
 Install the package from its source directory (or from GitHub if hosted there):
 
 ```r
-# From a local source directory
-install.packages("path/to/earndbc", repos = NULL, type = "source")
-
-# Or using remotes/pak if hosted on GitHub
-# remotes::install_github("epi-org/earndws")
+# Using remotes/pak if hosted on GitHub
+remotes::install_github("Economic/earndws")
 ```
 
 ### Required packages
@@ -30,15 +27,6 @@ The following packages are installed automatically as dependencies:
 | `openxlsx2` | Excel workbook creation |
 | `haven` | Factor handling from survey data |
 | `maps` | U.S. geographic map data |
-
-### Optional: `epiextractr`
-
-The **intro-to-r** workshop uses EPI's `epiextractr` package to load CPS ORG microdata. This is a suggested dependency and is **not** installed automatically — install it separately before running that workshop:
-
-```r
-# Install epiextractr from GitHub
-remotes::install_github("economic-policy-institute/epiextractr")
-```
 
 ---
 
