@@ -31,12 +31,8 @@ setup_workshop <- function(workshop = c("foraging-for-data", "intro-to-r"), path
 
   # write bundled datasets as CSVs into input/ so scripts can read without downloading
   if (workshop == "foraging-for-data") {
-    utils::write.csv(ar539,            file.path(path, "input", "ar539.csv"),            row.names = FALSE)
-    utils::write.csv(eta539_var_names, file.path(path, "input", "eta539_var_names.csv"), row.names = FALSE)
-  }
-  if (workshop == "intro-to-r") {
-    utils::write.csv(unemp_rates,       file.path(path, "input", "unemp_rates.csv"),       row.names = FALSE)
-    utils::write.csv(unemp_rates_state, file.path(path, "input", "unemp_rates_state.csv"), row.names = FALSE)
+    utils::write.csv(qcew_area_titles, file.path(path, "input", "area-titles-csv.csv"),            row.names = FALSE)
+    utils::write.csv(qcew_ind_titles,  file.path(path, "input", "industry-titles-csv.csv"), row.names = FALSE)
   }
 
   message("Workshop ready in '", normalizePath(path), "'")
