@@ -5,7 +5,7 @@ library(usethis)
 
 # read source CSVs (paths are relative to package root)
 qcew_area_titles  <- read.csv("data-raw/area-titles-csv.csv")
-qcew_ind_titles   <- read.csv("data-raw/industry-titles-csv.csv")
+qcew_ind_titles   <- read.csv("data-raw/industry-titles.csv")
 
 # write each as a compressed .rda file into data/
 use_data(qcew_area_titles, overwrite = TRUE)
