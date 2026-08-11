@@ -67,8 +67,8 @@ glimpse(qcew_raw)
 area_titles <- read_csv("input/area-titles-csv.csv")
 
 # left_join() matches by column name AND type 
-glimpse(qcew_raw$area_fips) 
-glimpse(area_titles$area_fips)
+glimpse(qcew_raw$area_fips) # <chr> - character string
+glimpse(area_titles$area_fips) # <chr> - character string
 
 
 qcew_clean <- qcew_raw |>
