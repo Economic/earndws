@@ -32,6 +32,9 @@ setup_workshop <- function(workshop = c("foraging-for-data", "intro-to-r"), path
   # write bundled datasets as CSVs into input/ so scripts can read without downloading
   if (workshop == "foraging-for-data") {
     utils::write.csv(earndws::qcew_area_titles, file.path(path, "input", "area-titles.csv"), row.names = FALSE)
+    utils::write.csv(earndws::qcew_raw_cache, file.path(path, "input", "qcew_raw-cache.csv"), row.names = FALSE)
+
+
   }
 
   message("Workshop ready in '", normalizePath(path), "'")

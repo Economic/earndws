@@ -51,7 +51,7 @@ qcew_raw <-
   map2(
     .x = combos$year, 
     .y = combos$qtr,
-    qcewGetIndustryData(
+    ~ qcewGetIndustryData(
       year = .x, 
       qtr = .y, 
       industry = "518"
@@ -64,20 +64,14 @@ glimpse(qcew_raw)
 # ------------------------------------------------------------------------------
 # 3. Join on human-readable titles ----
 # ------------------------------------------------------------------------------
-ind_titles  <- read_csv("input/industry_titles.csv")
 area_titles <- read_csv("input/area-titles-csv.csv")
 
-# Can you spot the difference between these two?
-glimpse(qcew_raw$area_fips)    # <int>/<dbl> — came from base R read.csv()
-glimpse(area_titles$area_fips)  # <chr> — came from readr::read_csv()
+# left_join() matches by column name AND type 
+glimpse(qcew_raw$area_fips) 
+glimpse(area_titles$area_fips)
 
-# left_join() matches by column name AND type — mismatched types silently
-# return zero matches, not an error. Make the types agree before joining:
-ind_titles <- ind_titles |>
-  mutate(industry_code = as.numeric(industry_code))
 
 qcew_clean <- qcew_raw |>
-  left_join(ind_titles) |>
   left_join(area_titles) |>
   # keep only the columns we need for this analysis
   select(
