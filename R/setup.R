@@ -5,7 +5,7 @@
 #' writes the bundled data CSVs into \code{input/} so the scripts run without
 #' any network access.
 #'
-#' @param workshop One of \code{"foraging-for-data"} or \code{"intro-to-r"}.
+#' @param workshop One of \code{"foraging-for-data"}.
 #' @param path Target directory. Defaults to the current working directory.
 #'
 #' @return Called for its side effects; returns \code{NULL} invisibly.
@@ -14,9 +14,8 @@
 #' @examples
 #' \dontrun{
 #' setup_workshop("foraging-for-data")
-#' setup_workshop("intro-to-r", path = "~/earn-workshop")
 #' }
-setup_workshop <- function(workshop = c("foraging-for-data", "intro-to-r"), path = ".") {
+setup_workshop <- function(workshop = c("foraging-for-data"), path = ".") {
   workshop <- match.arg(workshop)
 
   # create standard directory structure

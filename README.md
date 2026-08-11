@@ -41,7 +41,7 @@ library(earndws)
 setup_workshop("foraging-for-data")
 
 # Or set up in a specific folder
-setup_workshop("intro-to-r", path = "~/earn-workshop")
+setup_workshop("foraging-for-data", path = "~/earn-workshop")
 ```
 
 That's it. The function prints a confirmation message and your working directory is ready:
@@ -67,7 +67,7 @@ setup_workshop(workshop, path = ".")
 
 | Argument | Type | Description |
 |---|---|---|
-| `workshop` | character | One of `"foraging-for-data"` or `"intro-to-r"` |
+| `workshop` | character | One of `"foraging-for-data"` |
 | `path` | character | Target directory. Defaults to current working directory (`.`) |
 
 **What it does**
@@ -108,40 +108,6 @@ An applied data wrangling workshop using weekly unemployment insurance (UI) clai
 
 ---
 
-### `"intro-to-r"`
-
-A fundamentals workshop teaching R through hands-on analysis of national and state unemployment rates from CPS Outgoing Rotation Group (ORG) data.
-
-> **Note:** This workshop requires the `epiextractr` package. See [Optional: epiextractr](#optional-epiextractr) above.
-
-**What you'll learn**
-
-- Basic R syntax and arithmetic
-- Vectors, functions, and variable assignment
-- Data frames: subsetting with `$` and `[,]`, filtering with `subset()`
-- The pipe operator (`|>`) and readable data workflows
-- Core tidyverse verbs: `filter()`, `mutate()`, `summarise()`
-- Weighted statistics: `weighted.mean()` with survey weights
-- Conditional logic with `if_else()`
-- Working with factors and string operations
-- Data visualization with `ggplot2`: bar charts and choropleth maps
-
-**Scripts**
-
-| Script | Description |
-|---|---|
-| `intro_to_r.R` | Comprehensive participant tutorial walking through all concepts from basic arithmetic to geographic mapping, with explanatory comments throughout |
-| `live_code.R` | Condensed live-coding reference with key examples for each concept — intended as an instructor companion during the session |
-
-**Bundled data written to `input/`**
-
-| File | Description |
-|---|---|
-| `unemp_rates.csv` | National unemployment rates derived from CPS ORG extracts. Columns: `statefips`, `unemp_rate`, `usps` |
-| `unemp_rates_state.csv` | State-level unemployment rates from CPS ORG extracts. Same structure as above |
-
----
-
 ## Directory Structure After Setup
 
 ```
@@ -149,15 +115,9 @@ your-path/
 ├── code/
 │   ├── state_ui.R                  # (foraging-for-data)
 │   └── live-demo-practice.R
-│   # or
-│   ├── intro_to_r.R                # (intro-to-r)
-│   └── live_code.R
 ├── input/
 │   ├── ar539.csv                   # (foraging-for-data)
 │   └── eta539_var_names.csv
-│   # or
-│   ├── unemp_rates.csv             # (intro-to-r)
-│   └── unemp_rates_state.csv
 └── output/
     └── (your results go here)
 ```
@@ -174,12 +134,6 @@ The package also exposes its datasets directly as R objects after `library(earnd
 
 # DOL variable name dictionary
 ?eta539_var_names
-
-# National CPS unemployment rates
-?unemp_rates
-
-# State-level CPS unemployment rates
-?unemp_rates_state
 ```
 
 ---

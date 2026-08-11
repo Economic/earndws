@@ -45,8 +45,8 @@ industry <- "518"  # NAICS 518: Data Processing, Hosting & Related Services
 combos <- tidyr::crossing(year = years, qtr = quarters)
 
 # NOTE: this makes 8 live calls to the BLS API — give it 15-20 seconds.
-# If the API is slow/unresponsive during class, ask your instructor for the
-# cached copy instead: qcew_raw <- read_csv("input/qcew_raw_cached.csv")
+# If the API is slow/unresponsive use cached copy instead:
+# qcew_raw <- read_csv("input/qcew_raw_cached.csv")
 qcew_raw <- 
   map2(
     .x = combos$year, 
