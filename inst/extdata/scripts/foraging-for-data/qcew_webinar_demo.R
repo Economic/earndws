@@ -68,8 +68,8 @@ ind_titles  <- read_csv("input/industry_titles.csv")
 area_titles <- read_csv("input/area-titles-csv.csv")
 
 # Can you spot the difference between these two?
-glimpse(qcew_raw$industry_code)    # <int>/<dbl> — came from base R read.csv()
-glimpse(ind_titles$industry_code)  # <chr> — came from readr::read_csv()
+glimpse(qcew_raw$area_fips)    # <int>/<dbl> — came from base R read.csv()
+glimpse(area_titles$area_fips)  # <chr> — came from readr::read_csv()
 
 # left_join() matches by column name AND type — mismatched types silently
 # return zero matches, not an error. Make the types agree before joining:
@@ -81,8 +81,8 @@ qcew_clean <- qcew_raw |>
   left_join(area_titles) |>
   # keep only the columns we need for this analysis
   select(
-    year, qtr, area_fips, area_title, industry_code, industry_title,
-    own_code, agglvl_code, month1_emplvl, month2_emplvl, month3_emplvl
+    year, qtr, area_fips, area_title,
+    month1_emplvl, month2_emplvl, month3_emplvl
   ) |>
   filter(own_code == 5) |>      # own_code 5 = private sector (drops federal/state/local gov)
   filter(agglvl_code == 55) |>  # agglvl_code 55 = one row per state total (drops county detail)
